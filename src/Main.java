@@ -18,13 +18,7 @@ public class Main {
                     Education.values()[new Random().nextInt(Education.values().length)])
             );
         }
-        //   System.out.println(persons.stream().filter(person -> person.getAge()<18 ).count()); до 18 лет
-        //System.out.println(persons.stream()
-        //         .filter(it -> it.getAge() >= 18 && it.getAge() < 27) 18-27
-        //        .filter(it -> it.getSex().equals(Sex.MAN))
-        //       .map(Person::getFamily)
-        //       .collect(Collectors.toList())
-        // );
+
 
         System.out.println(persons.stream()
                 .filter(it -> (it.getAge() >= 18 && it.getAge() < 65 && it.getSex().equals(Sex.MAN))
