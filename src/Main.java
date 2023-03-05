@@ -18,10 +18,11 @@ public class Main {
                     Education.values()[new Random().nextInt(Education.values().length)])
             );
         }
+        System.out.println("количество несовершенно летних: " + persons.stream().filter(person->person.getAge()<18).count());
 
+        System.out.println("фамилии призывников: "+ persons.stream().filter(person->person.getAge()>=18 && person.getAge()<27).map(Person::getFamily).toList()); //persons.stream().filter(person->person.getAge()>=18 && person.getAge()<27).count());
 
-        System.out.println(persons.stream()
-                .filter(it -> (it.getAge() >= 18 && it.getAge() < 65 && it.getSex().equals(Sex.MAN))
+        System.out.println("работоспособные люди с высшим образованием: " + persons.stream().filter(it -> (it.getAge() >= 18 && it.getAge() < 65 && it.getSex().equals(Sex.MAN))
                         || (it.getAge() >= 18 && it.getAge() < 60 && it.getSex().equals(Sex.WOMAN))
                         && it.getEducation().equals(Education.HIGHER))
                 .sorted(comparator)
